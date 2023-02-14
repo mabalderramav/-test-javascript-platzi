@@ -344,3 +344,124 @@ while (answer != 4) {
 }
 alert("Congratulations!");
 ```
+
+## List
+
+### 1️⃣ Answer the following questions in the comments section:
+
+- What is an array?
+  It is an ordered collection of data(either primitive or object depending upon the language). Array are used to store multiple values in a single variable. It is a collection of elements.
+  Example:
+
+```javascript
+const array = [element1, element2, element3];
+```
+
+- What is an object?
+  It is is an standalone entity, with properties and type.
+  Example:
+
+```javascript
+const object = {
+  key1: value1,
+  key2: value2,
+  key3: value3,
+};
+```
+
+- When is better use objects or arrays?
+  It depends on the situation, if you need to store a list of values, you can use an array, but if you need to store a list of values with a key, you can use an object.
+  Example:
+
+```javascript
+// Array
+const array = ["element1", "element2", "element3"];
+// Object
+const object = {
+  key1: "value1",
+  key2: "value2",
+  key3: "value3",
+};
+```
+
+- Can I mix objects and arrays?
+  Yes, you can mix objects and arrays.
+  Example:
+
+```javascript
+const array = [
+  "element1",
+  "element2",
+  "element3",
+  {
+    key1: "value1",
+    key2: "value2",
+    key3: "value3",
+  },
+];
+```
+
+### 2️⃣ Create a function that can receive any array as a parameter and print its first element.
+
+```javascript
+const array = ["element1", "element2", "element3"];
+const printFirstElement = (array) => {
+  console.log(array[0]);
+};
+printFirstElement(array);
+
+// Or
+const printFirstElement = (array) => {
+  console.log(array.shift());
+};
+printFirstElement(array);
+```
+
+### 3️⃣ Create a function that can receive any array as a parameter and print all its elements one by one (printing the entire array is not valid).
+
+```javascript
+const array = ["element1", "element2", "element3"];
+const printAllElements = (array) => {
+  array.forEach((element) => {
+    console.log(element);
+  });
+};
+printAllElements(array);
+// Or
+const printAllElements = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+};
+printAllElements(array);
+// Or
+const printAllElements = (array) => {
+  for (const element of array) {
+    console.log(element);
+  }
+};
+printAllElements(array);
+```
+
+### 4️⃣ Create a function that can receive any object as a parameter and print all its elements one by one (printing the entire object is not valid).
+
+```javascript
+const object = {
+  key1: "value1",
+  key2: "value2",
+  key3: "value3",
+};
+const printAllElements = (object) => {
+  for (const key in object) {
+    console.log(object[key]);
+  }
+};
+printAllElements(object);
+// Or
+const printAllElements = (object) => {
+  Object.values(object).forEach((value) => {
+    console.log(value);
+  });
+};
+printAllElements(object);
+```
